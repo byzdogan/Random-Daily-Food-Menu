@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Menu</title>
+</head>
+<style>
+    body {
+        background-color: rgb(255, 255, 255);
+        background-repeat: no-repeat;
+        background-position: top ;
+        background-size: 70%;
+        text-align: center;
+
+    }
+
+    img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;         
+        }
+    
+    h1 {
+        color: crimson;
+        text-decoration: underline;
+    }
+    
+    h2 {
+        color: coral;
+    }
+
+    li {
+        font-weight: 800;
+        font-size: large;
+    }
+
+    button {
+        margin: 30px;
+        background-color: cornflowerblue;
+        border-color:darkblue;
+        border-style: dotted;
+        border-radius: 50%;
+        height: 60px;
+        font-weight: 700;
+    }
+</style>
+<body>
+    <h1>Here is your daily menu:</h1>
+    <!-- <button onClick="window.location.reload();">Click if you don't like!</button> -->
+    <script>
+        const breakfastList = new Array("egg", "cornflex", "crepe");
+        const lunchList = new Array("hamburger", "pasta", "soup");
+        const dinnerList = new Array("kebab", "risotto", "fish and chips");
+        const randomNumber = Math.floor(Math.random()*lunchList.length);
+        const breakfast = breakfastList[randomNumber];
+        const lunch = lunchList[randomNumber];
+        const dinner = dinnerList[randomNumber];
+        document.write("<h2>Breakfast:</h2>")
+        document.write("<li>" + breakfast + "</li>");
+        document.write("<h2>Lunch:</h2>")
+        document.write("<li>" + lunch + "</li>");
+        document.write("<h2>Dinner:</h2>")
+        document.write("<li>" + dinner + "</li>");
+        const button = document.createElement("button");
+        button.onclick = function() {window.location.reload()};
+        button.textContent = "Click if you don't like!";
+        document.body.appendChild(button);   
+    </script>
+
+</body>
+</html>
